@@ -1,33 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-    // add initital total calculation first 
-        //here
-    
-    // these are selection helpers
-    const invoiceTable = document.getElementById('invoiceTable').getElementsByTagName('tbody')[0];
-    const invoiceTotal = document.getElementById('invoiceTotal');
-
-
-
-    // This function updates the total amount in each row ( item price * Qte )
-    function updateItemTotal(row) {
-       
+function updateItemTotal() {
+    for (let i = 0; i < document.getElementsByTagName('tbody').length; i++) {
+        document.getElementsByClassName('itemTotal')[i].innerHTML = document.getElementsByClassName(".quantity")[i] * document.getElementsByClassName(".unitPrice")[i];
     }
+}
 
-
-    // This function updates the total amount of the invoice (sum all Item totals)
-    function updateInvoiceTotal() {
-       
+function updateInvoiceTotal() {
+    for (let i = 0; i < document.getElementsByTagName('tbody').length; i++) {
+        invoiceTotal.innerHTML +=document.getElementsByClassName('itemTotal')[i].textContent
     }
-
-
-    // Ajouter un nouveau item 
-    function addNewItem() {
-        
-
-    }
-
-
-    // If you finish the above functions, consider adding a delete button
- 
-});
+}
+console.log(invoiceTotal.innerHTML)
