@@ -1,6 +1,6 @@
 function updateItemTotal() {
     for (let i = 0; i < document.getElementsByTagName('tbody').length; i++) {
-        document.getElementsByClassName('itemTotal')[i].innerHTML = document.getElementsByClassName(".quantity")[i] * document.getElementsByClassName(".unitPrice")[i];
+        document.getElementsByClassName('itemTotal')[i].innerHTML = document.getElementsByClassName("quantity")[i].value * document.getElementsByClassName("unitPrice")[i].value;
     }
 }
 
